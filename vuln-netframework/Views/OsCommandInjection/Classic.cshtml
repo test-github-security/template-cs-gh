@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Classic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 p-5 mb-4 bg-light rounded-3">
+    <div class="offset-md-2 py-3">
+        <p class="col-md-8 fs-5">
+            OS command injection (also known as shell injection) is a web security vulnerability that allows an attacker to execute arbitrary operating system (OS)
+            commands on the server that is running an application, and typically fully compromise the application and all its data.
+        </p>
+    </div>
+</div>
+
+@if (!String.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success col-md-8 offset-md-2" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Classic</h4>
+    @using (Html.BeginForm("Classic", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="classic" />
+            <input type="text" class="form-control" placeholder="arguments" aria-label="arguments" aria-describedby="arguments-text" name="arguments" id="classic-args" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Classic With Process Start Info</h4>
+    @using (Html.BeginForm("ClassicWithProcessStartInfo", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="classicWithProcessStartInfo" />
+            <input type="text" class="form-control" placeholder="arguments" aria-label="arguments" aria-describedby="arguments-text" name="arguments" id="classicWithProcessStartInfo-args" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Classic 2</h4>
+    @using (Html.BeginForm("Classic2", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="ping" aria-label="ping" aria-describedby="ping-text" name="ip" id="classic2" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Ping</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Classic 2 With Process Start Info</h4>
+    @using (Html.BeginForm("Classic2WithProcessStartInfo", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="ping" aria-label="ping" aria-describedby="ping-text" name="ip" id="classic2WithProcessStartInfo" />
+            <button class="btn btn-outline-secondary" type="submit" id="ping-button">Ping</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Classic with Python</h4>
+    @using (Html.BeginForm("ClassicWithPython", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="python command" aria-label="pythoncommand" aria-describedby="pythoncommand-button" name="arguments" id="classicWithPython" />
+            <button class="btn btn-outline-secondary" type="submit" id="pythoncommand-button">Run Python Command</button>
+        </div>
+    }
+</div>

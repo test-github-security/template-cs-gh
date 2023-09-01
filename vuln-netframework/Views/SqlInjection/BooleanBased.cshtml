@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "BooleanBased";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 p-5 mb-4 bg-light rounded-3">
+    <div class="offset-md-2 py-3">
+        <p class="col-md-8 fs-5">
+            Boolean-based SQL Injection is an inferential SQL Injection technique that relies on sending an SQL query to the database which forces the application to return a different result
+            depending on whether the query returns a TRUE or FALSE result. Depending on the result, the content within the HTTP response will change, or remain the same. 
+            This allows an attacker to infer if the payload used returned true or false, even though no data from the database is returned.
+        </p>
+    </div>
+</div>
+
+@if (!String.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success col-md-8 offset-md-2" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<div class="col-md-8 offset-md-2">
+    <h4>Boolean Based</h4>
+    @using (Html.BeginForm("BooleanBased", "SqlInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="check user" aria-label="search" aria-describedby="search-button" name="username" id="booleanbased" />
+            <button class="btn btn-outline-secondary" type="submit" id="search-button">Check User</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2">
+    <h4>Boolean Based With Format String</h4>
+    @using (Html.BeginForm("BooleanBasedWithFormatString", "SqlInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="check user" aria-label="search2" aria-describedby="search-button2" name="username" id="booleanbasedwithformatstring" />
+            <button class="btn btn-outline-secondary" type="submit" id="search-button2">Check User</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2">
+    <h4>Boolean Based With Sql Data Adapter</h4>
+    @using (Html.BeginForm("BooleanBasedWithSqlDataAdapter", "SqlInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="check user" aria-label="search3" aria-describedby="search-button3" name="username" id="booleanbasedwithsqldataadapter" />
+            <button class="btn btn-outline-secondary" type="submit" id="search-button3">Check User</button>
+        </div>
+    }
+</div>
+

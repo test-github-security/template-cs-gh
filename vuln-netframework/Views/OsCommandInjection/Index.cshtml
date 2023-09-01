@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 p-5 mb-4 bg-light rounded-3">
+    <div class="offset-md-2 py-3">
+        <p class="col-md-8 fs-5">
+            OS command injection (also known as shell injection) is a web security vulnerability that allows an attacker to execute arbitrary operating system (OS) 
+            commands on the server that is running an application, and typically fully compromise the application and all its data.
+        </p>
+        <br />
+        <p class="col-md-8 fs-6">More resource about OS Command Injection vulnerabilities:</p>
+        <ul class="col-md-8 list-group">
+            <li class="list-group-item list-group-item-danger"><a class="link-dark" href="https://cwe.mitre.org/data/definitions/78.html">CWE-78</a> </li>
+            <li class="list-group-item list-group-item-danger"><a class="link-dark" href="https://portswigger.net/web-security/os-command-injection">Web Security Academy - OS Command Injection</a> </li>
+        </ul>
+    </div>
+</div>
+
+<div class="p-4 card-group">
+    <div class="card">
+        <div class="card-header">
+            Classic (In-Band)
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                Classic OS Command Injection occurs when an attacker is able to use the same communication channel to both launch the attack and gather results.
+            </p>
+            @Html.ActionLink("Classic (In-Band)", "Classic", "OsCommandInjection", new { area = "" }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Blind (Inferential)
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                Blind OS Command Injection occurs when an attacker is not able to use the same communication channel to both launch the attack and gather results.
+                The results of the commands that you inject will not be displayed to the attacker and no error messages are returned. The attacker might use another technique
+                to identify whether the command was really executed on the server or not.
+            </p>
+            @Html.ActionLink("Blind (Inferential)", "Blind", "OsCommandInjection", new { area = "" }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>

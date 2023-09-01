@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Blind";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 p-5 mb-4 bg-light rounded-3">
+    <div class="offset-md-2 py-3">
+        <p class="col-md-8 fs-5">
+            Blind OS Command Injection occurs when an attacker is not able to use the same communication channel to both launch the attack and gather results.
+            The results of the commands that you inject will not be displayed to the attacker and no error messages are returned. The attacker might use another technique
+            to identify whether the command was really executed on the server or not.
+        </p>
+    </div>
+</div>
+
+@if (!String.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success col-md-8 offset-md-2" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<div class="col-md-8 offset-md-2">
+    <h4>Blind</h4>
+    @using (Html.BeginForm("Blind", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-button" name="command" id="blind" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind With Arguments</h4>
+    @using (Html.BeginForm("BlindWithArguments", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="blindWithArguments" />
+            <input type="text" class="form-control" placeholder="arguments" aria-label="arguments" aria-describedby="arguments-text" name="arguments" id="blindWithArguments-args" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind 2</h4>
+    @using (Html.BeginForm("Blind2", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="blind2" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind 2 With Process Start Info</h4>
+    @using (Html.BeginForm("Blind2WithProcessStartInfo", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="blind2WithProcessStartInfo" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind 3</h4>
+    @using (Html.BeginForm("Blind3", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="blind3" />
+            <input type="text" class="form-control" placeholder="arguments" aria-label="arguments" aria-describedby="arguments-text" name="arguments" id="blind3-args" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind 3 With Process Start Info</h4>
+    @using (Html.BeginForm("Blind3WithProcessStartInfo", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="os command" aria-label="oscommand" aria-describedby="oscommand-text" name="command" id="blind3WithProcessStartInfo" />
+            <input type="text" class="form-control" placeholder="arguments" aria-label="arguments" aria-describedby="arguments-text" name="arguments" id="blind3WithProcessStartInfo-args" />
+            <button class="btn btn-outline-secondary" type="submit" id="oscommand-button">Run Command</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind 4</h4>
+    @using (Html.BeginForm("Blind4", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="check host" aria-label="checkhost" aria-describedby="checkhost-text" name="host" id="blind4" />
+            <button class="btn btn-outline-secondary" type="submit" id="checkhost-button">Check Host</button>
+        </div>
+    }
+</div>
+
+<br />
+<hr class="col-md-8 offset-md-2" />
+<br />
+
+<div class="col-md-8 offset-md-2 ">
+    <h4>Blind 4 With Process Start Info</h4>
+    @using (Html.BeginForm("Blind4WithProcessStartInfo", "OsCommandInjection", FormMethod.Post))
+    {
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="check host" aria-label="checkhost" aria-describedby="checkhost-text" name="host" id="blind4WithProcessStartInfo" />
+            <button class="btn btn-outline-secondary" type="submit" id="checkhost-button">Check Host</button>
+        </div>
+    }
+</div>
